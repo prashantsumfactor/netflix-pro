@@ -13,3 +13,6 @@
 3. Banner component structure
 4. Banner component Button with font
 5. Icon with google font
+6. Nav Bar component
+7. Nav Bar component styling
+8. Nav bar router
