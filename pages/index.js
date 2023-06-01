@@ -1,7 +1,7 @@
 import Head from 'next/head';
 import styles from '../styles/Home.module.css';
 import Banner from '../components/banner';
-import NavBar from '@/components/navBar';
+import NavBar from '../components/navbar';
 
 export default function Home() {
   return (
