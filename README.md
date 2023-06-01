@@ -23,3 +23,9 @@
 13. Card component size
 14. Card component error handling
 15. Card component image error
+16. framer motion with card
+17. implement framer motion with card component   
+18. section card architecture
+19. section card structure
+20. section card styling
+21. card scalling feature
