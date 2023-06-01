@@ -29,3 +29,9 @@
 19. section card structure
 20. section card styling
 21. card scalling feature
+22. refactor section card component
+23. youtube api overview
+24. which youtube api to use
+25. implement youtube search api
+26. implement youtube search api2
+27. data fetching technique-server side rendering
