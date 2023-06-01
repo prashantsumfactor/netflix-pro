@@ -2,6 +2,7 @@ import styles from './navbar.module.css';
 import { useRouter } from 'next/router';
 import Link from 'next/link';
 import { useState } from 'react';
+import Image from 'next/image';
 
 const NavBar = (props) => {
     const { userName } = props;
@@ -18,7 +19,7 @@ const NavBar = (props) => {
         router.push('/browse/my-list');
     };
 
-    const handleShoDropDown =(e)=>{
+    const handleShoDropDown = (e) => {
         e.preventDefault()
         setShowDropDown(!showDropDown);
     };
@@ -29,7 +30,12 @@ const NavBar = (props) => {
                 <div className={styles.wrapper}>
                     <a className={styles.logoLink} href='/'>
                         <div className={styles.logoWrapper}>
-                            Netflix
+                            <Image
+                                src="/netflix.svg"
+                                alt="Netflix logo"
+                                width={128}
+                                height={34}
+                            />
                         </div>
                     </a>
                     <ul className={styles.navItems}>
@@ -40,6 +46,12 @@ const NavBar = (props) => {
                         <div>
                             <button className={styles.usernameBtn} onClick={handleShoDropDown}>
                                 <p className={styles.username}>{userName}</p>
+                                <Image
+                                    src="/expand_more.svg"
+                                    alt="Expand dropdown"
+                                    width={24}
+                                    height={24}
+                                />
                             </button>
                             {showDropDown &&
                                 <div className={styles.navDropdown}>

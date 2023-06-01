@@ -17,4 +17,9 @@
 7. Nav Bar component styling
 8. Nav bar router
 9. Nav bar dropdown
-10. 
+10. Nav bar logo icons
+11. Card component architecture
+12. Card component structure
+13. Card component size
+14. Card component error handling
+15. Card component image error
