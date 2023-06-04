@@ -35,3 +35,12 @@
 25. implement youtube search api
 26. implement youtube search api2
 27. data fetching technique-server side rendering
+28. serverside rendering rule
+29. implement serverside rendering for fetch video
+30. youtube api - google console project
+31. invoke youtube api
+32. youtube api query
+33. implement more section for videos
+34. Error handling for video lib
+35. popular video api doc
+36. implement popular video api 
