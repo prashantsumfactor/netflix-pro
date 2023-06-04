@@ -41,3 +41,4 @@
 31. invoke youtube api
 32. youtube api query
 33. implement more section for videos
+34. Error handling for video lib
