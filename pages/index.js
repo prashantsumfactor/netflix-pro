@@ -3,7 +3,7 @@ import styles from '../styles/Home.module.css';
 import Banner from '../components/banner/banner';
 import NavBar from '../components/nav/navbar';
 import SectionCards from '../components/card/section-cards';
-import { getVideos } from '../lib/videos';
+import { getPopularVideo, getVideos } from '../lib/videos';
 
 export async function getServerSideProps() {
  
@@ -13,17 +13,17 @@ export async function getServerSideProps() {
 
   const travelVideos = await getVideos('travel');
 
-  const populerVideos = await getVideos('disney trailer');
+  const popularVideos = await getPopularVideo();
 
 
-  return { props : {disneyVideos, productivityVideos, travelVideos, populerVideos}};
+  return { props : {disneyVideos, productivityVideos, travelVideos, popularVideos}};
 }
 
 export default function Home({
   disneyVideos,
   productivityVideos,
   travelVideos,
-  populerVideos,
+  popularVideos,
 }) {
 
   return (
@@ -41,11 +41,10 @@ export default function Home({
 
       <div className={styles.sectionWrapper}>
         <SectionCards title='Disney' videos={disneyVideos} size='large' />
+        <SectionCards title='Travel' videos={travelVideos} size='small' />
         <SectionCards title='Productivity' videos={productivityVideos} size='medium' />
-        <SectionCards title='Travel' videos={travelVideos} size='medium' />
-        <SectionCards title='Populer' videos={travelVideos} size='small' />
+        <SectionCards title='Popular' videos={popularVideos} size='small' />
       </div>
-
     </div>
   );
 }
