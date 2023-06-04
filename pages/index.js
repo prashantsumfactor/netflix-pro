@@ -6,7 +6,7 @@ import SectionCards from '../components/card/section-cards';
 import { getPopularVideo, getVideos } from '../lib/videos';
 
 export async function getServerSideProps() {
- 
+
   const disneyVideos = await getVideos('disney trailer');
 
   const productivityVideos = await getVideos('productivity');
@@ -16,7 +16,7 @@ export async function getServerSideProps() {
   const popularVideos = await getPopularVideo();
 
 
-  return { props : {disneyVideos, productivityVideos, travelVideos, popularVideos}};
+  return { props: { disneyVideos, productivityVideos, travelVideos, popularVideos } };
 }
 
 export default function Home({
@@ -33,17 +33,19 @@ export default function Home({
         <link rel='icon' href='/favicon.ico' />
       </Head>
 
-      <NavBar userName="Prashant@sum.com" />
-      <Banner
-        title='Marvel Super Heros'
-        subTitle='A powerful team'
-        imgUrl='marvel.webp' />
+      <div className={styles.main}>
+        <NavBar userName="Prashant@sum.com" />
+        <Banner
+          title='Marvel Super Heros'
+          subTitle='A powerful team'
+          imgUrl='marvel.webp' />
 
-      <div className={styles.sectionWrapper}>
-        <SectionCards title='Disney' videos={disneyVideos} size='large' />
-        <SectionCards title='Travel' videos={travelVideos} size='small' />
-        <SectionCards title='Productivity' videos={productivityVideos} size='medium' />
-        <SectionCards title='Popular' videos={popularVideos} size='small' />
+        <div className={styles.sectionWrapper}>
+          <SectionCards title='Disney' videos={disneyVideos} size='large' />
+          <SectionCards title='Travel' videos={travelVideos} size='small' />
+          <SectionCards title='Productivity' videos={productivityVideos} size='medium' />
+          <SectionCards title='Popular' videos={popularVideos} size='small' />
+        </div>
       </div>
     </div>
   );
