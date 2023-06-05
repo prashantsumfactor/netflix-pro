@@ -49,3 +49,9 @@
 
 1. section overview
 2. passwordless authentication
+3. Overview od sign in
+4. setup sign in page
+5. quick note
+6. sign in header component
+7. sign in page stucture
+8. sing in page styling
