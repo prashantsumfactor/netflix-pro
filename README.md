@@ -55,3 +55,10 @@
 6. sign in header component
 7. sign in page stucture
 8. sing in page styling
+9. sign in form validate
+10. sign in routing dashboard
+11. what os magic link
+12. setup magic account
+13. install magic api in app
+14. magic api keys
+15. magic sdk continue
