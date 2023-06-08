@@ -64,3 +64,7 @@
 15. magic sdk continue
 16. magic doc for login
 17. magic implementation
+18. routing delay with login
+19. username on navbar
+20. sign out user
+21. app route once singIN

@@ -19,8 +19,7 @@ export default function Home({
   travelVideos,
   popularVideos,
 }) {
-
-  return (
+return (
     <div className={styles.container}>
       <Head>
         <title>Netflix</title>
@@ -28,7 +27,7 @@ export default function Home({
       </Head>
 
       <div className={styles.main}>
-        <NavBar userName="Prashant@sum.com" />
+        <NavBar userName="prashant@sumfactor.com" />
         <Banner
           title='Marvel Super Heros'
           subTitle='A powerful team'

@@ -1,7 +1,7 @@
 import styles from '../styles/Login.module.css';
 import Head from 'next/head';
 import Image from 'next/image';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
 import { magic } from '@/lib/magic-client';
 
@@ -12,6 +12,18 @@ const Login = () => {
     const [email, setEmail] = useState('')
     const [isLoading, setLoading] = useState(false);
     const router = useRouter();
+
+    useEffect (()=>{
+        const handleComplete = () => {
+            setLoading(false);
+        }
+        router.events.on("routeChangeComplete",handleComplete);
+        router.events.on("routeChangeError",handleComplete);
+        return ()=>{
+            router.events.off("routeChangeComplete",handleComplete);
+            router.events.off("routeChangeError",handleComplete);
+        };
+    },[router]);
 
     const handleOnChangeEmail = (e) => {
         setUserMsg('')
@@ -30,7 +42,6 @@ const Login = () => {
                     const didToken = await magic.auth.loginWithMagicLink({ email });
                     if(didToken){
                         console.log('didToken', didToken);
-                        setLoading(false);
                         router.push('/');
                     }
                 } catch {
