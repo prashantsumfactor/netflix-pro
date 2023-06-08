@@ -44,3 +44,29 @@
 34. Error handling for video lib
 35. popular video api doc
 36. implement popular video api 
+
+## Section-15 :
+
+1. section overview
+2. passwordless authentication
+3. Overview od sign in
+4. setup sign in page
+5. quick note
+6. sign in header component
+7. sign in page stucture
+8. sing in page styling
+9. sign in form validate
+10. sign in routing dashboard
+11. what os magic link
+12. setup magic account
+13. install magic api in app
+14. magic api keys
+15. magic sdk continue
+16. magic doc for login
+17. magic implementation
+18. routing delay with login
+19. username on navbar
+20. sign out user
+21. app route once singIN
+22. routing flicker with login
+23. loading component

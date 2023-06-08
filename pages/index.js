@@ -6,16 +6,10 @@ import SectionCards from '../components/card/section-cards';
 import { getPopularVideo, getVideos } from '../lib/videos';
 
 export async function getServerSideProps() {
-
   const disneyVideos = await getVideos('disney trailer');
-
   const productivityVideos = await getVideos('productivity');
-
   const travelVideos = await getVideos('travel');
-
   const popularVideos = await getPopularVideo();
-
-
   return { props: { disneyVideos, productivityVideos, travelVideos, popularVideos } };
 }
 
@@ -25,8 +19,7 @@ export default function Home({
   travelVideos,
   popularVideos,
 }) {
-
-  return (
+return (
     <div className={styles.container}>
       <Head>
         <title>Netflix</title>
@@ -34,7 +27,7 @@ export default function Home({
       </Head>
 
       <div className={styles.main}>
-        <NavBar userName="Prashant@sum.com" />
+        <NavBar userName="prashant@sumfactor.com" />
         <Banner
           title='Marvel Super Heros'
           subTitle='A powerful team'
