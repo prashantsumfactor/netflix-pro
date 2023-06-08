@@ -62,3 +62,5 @@
 13. install magic api in app
 14. magic api keys
 15. magic sdk continue
+16. magic doc for login
+17. magic implementation

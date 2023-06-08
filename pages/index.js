@@ -4,21 +4,12 @@ import Banner from '../components/banner/banner';
 import NavBar from '../components/nav/navbar';
 import SectionCards from '../components/card/section-cards';
 import { getPopularVideo, getVideos } from '../lib/videos';
-import { magic } from '@/lib/magic-client'; 
 
 export async function getServerSideProps() {
-
-  console.log({magic});
-
   const disneyVideos = await getVideos('disney trailer');
-
   const productivityVideos = await getVideos('productivity');
-
   const travelVideos = await getVideos('travel');
-
   const popularVideos = await getPopularVideo();
-
-
   return { props: { disneyVideos, productivityVideos, travelVideos, popularVideos } };
 }
 

@@ -3,29 +3,44 @@ import Head from 'next/head';
 import Image from 'next/image';
 import { useState } from 'react';
 import { useRouter } from 'next/router';
+import { magic } from '@/lib/magic-client';
 
 const Login = () => {
 
-    const [userMsg,setUserMsg] = useState('')
-    const [email,setEmail] = useState('')
+    console.log({ magic });
+    const [userMsg, setUserMsg] = useState('')
+    const [email, setEmail] = useState('')
+    const [isLoading, setLoading] = useState(false);
     const router = useRouter();
 
     const handleOnChangeEmail = (e) => {
         setUserMsg('')
         e.preventDefault();
-        console.log('Hi email',e);
+        console.log('Hi email', e);
         setEmail(e.target.value);
     }
 
-    const handleLoginWithEmail = (e) => {
+    const handleLoginWithEmail = async (e) => {
         e.preventDefault();
         console.log('Hi button');
-        if(email){
-            if(email==='pra@gm.com'){
-                router.push('/');
-            }
+        if (email) {
+                setLoading(true);
+                try {
+                    console.log('Email=',email);
+                    const didToken = await magic.auth.loginWithMagicLink({ email });
+                    if(didToken){
+                        console.log('didToken', didToken);
+                        setLoading(false);
+                        router.push('/');
+                    }
+                } catch {
+                    // Handle errors if required!
+                    setLoading(false);
+                    console.log('something went wrong');
+                }
             setUserMsg('')
-        }else{
+        } else {
+            setLoading(false);
             setUserMsg('Enter a valid email address')
         }
     }
@@ -54,7 +69,9 @@ const Login = () => {
                     <h1 className={styles.signinHeader}>Sign In</h1>
                     <input className={styles.emailInput} onChange={handleOnChangeEmail} type='text' placeholder='Email Address' />
                     <p className={styles.userMsg}>{userMsg}</p>
-                    <button className={styles.loginBtn} onClick={handleLoginWithEmail}>Sign In</button>
+                    <button className={styles.loginBtn} onClick={handleLoginWithEmail}>
+                        {isLoading ? 'Loading...' :'Sign In'}
+                    </button>
                 </div>
             </main>
         </div>
