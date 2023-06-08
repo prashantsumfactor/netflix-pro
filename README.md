@@ -68,3 +68,5 @@
 19. username on navbar
 20. sign out user
 21. app route once singIN
+22. routing flicker with login
+23. loading component
