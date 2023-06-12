@@ -72,3 +72,9 @@
 23. loading component
 
 ## Section-16 :
+
+1. project architecture
+2. what are we buiding and video id page
+3. create dynamic route - video id page
+4. link dynamic page to card component routing
+5. connect link component

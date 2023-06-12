@@ -8,7 +8,7 @@ import Loading from '../components/loading/loading';
 export default function MyApp({ Component, pageProps }) {
 
     const router = useRouter();
-    const [isLoading, setLoading] = useState(true);
+    const [isLoading, setLoading] = useState(false);
 
     useEffect (()=>{
         const handleComplete = () => {
