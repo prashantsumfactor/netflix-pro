@@ -8,13 +8,21 @@ Modal.setAppElement('#__next');
 const Video = () => {
     const router = useRouter();
     return (
-        <div>video id {router.query.videoId}
+        <div className={styles.container}>video id {router.query.videoId}
             <Modal
                 isOpen={true}
-                onRequestClose={()=> router.back()}
+                onRequestClose={() => router.back()}
                 style={styles.overlay}
+                className={styles.modal}
                 contentLabel="Example Modal">
-                <div>I am a modal</div>
+                <iframe
+                    id="ytplayer"
+                    width="640"
+                    height="360"
+                    src="http://www.youtube.com/embed/iuk77TjvfmE?autoplay=1&cc_load_policy=1&controls=0&rel=1"
+                    frameborder="0"
+                    allowfullscreen>
+                </iframe>            
             </Modal>
         </div>
     );
