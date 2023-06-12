@@ -78,3 +78,8 @@
 3. create dynamic route - video id page
 4. link dynamic page to card component routing
 5. connect link component
+6. link component implement
+7. connect banner component
+8. react model docs
+9. install react model component
+10. model component style
