@@ -5,14 +5,14 @@
     right: 0;
     margin: 0 auto;
   
-    width: 800px;
+    width: 900px;
     bottom: 40px;
-    background-color: var(--black40);
+    background-color:#141414;
     top: 10%;
   
     outline: none;
     border-radius: 10px;
-    border: 1px solid var(--shadow10);
+    border: 1px solid rgba(20, 157, 32, 0.3);
   }
 
 .overlay {  
@@ -21,3 +21,21 @@
     right: 0;  
     bottom: 0;
   }
+
+  /** gives box shadow to the video frame **/
+.borderBoxShadow {
+  -webkit-box-shadow: 0 3px 7px rgb(220, 38, 38);
+  -moz-box-shadow: 0 3px 7px rgb(220, 38, 38);
+  box-shadow: 0 3px 7px var(--shadow20);
+  -webkit-background-clip: padding-box;
+  -moz-background-clip: padding-box;
+  background-clip: padding-box;
+  opacity: 1;
+  background: linear-gradient(to top, #181818, transparent 50%);
+}
+
+/** Makes video edges curvy **/
+.videoPlayer {
+  border-radius: 10px 10px 0px 0px;
+  composes: borderBoxShadow;
+}

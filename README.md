@@ -84,3 +84,5 @@
 9. install react model component
 10. model component style
 11. implement youtube api player & doc
+12. youtube player style
+13. 
