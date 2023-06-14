@@ -85,4 +85,7 @@
 10. model component style
 11. implement youtube api player & doc
 12. youtube player style
-13. 
+13. modal component structure
+14. modal styling
+15. which data fetching techniques to use
+16. what is ISR
