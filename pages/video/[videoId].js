@@ -3,18 +3,11 @@ import Modal from "react-modal";
 import styles from '../../styles/Video.module.css'
 import clx from "classnames";
 import { getVideoData } from "@/lib/videos";
+import NavBar from "@/components/nav/navbar";
 
 Modal.setAppElement('#__next');
 
 export async function getStaticProps(context){
-    // const video = {
-    //     title: 'Hi heros',
-    //     publishTime: '1990-05-23',
-    //     description: 'A team of superos to save the world from bad culprit that want to destroy planets.',
-    //     channelTitle: 'Marvel Movies',
-    //     viewCount: 10000,
-    // };
-
     console.log({context});
     const videoId = context.params.videoId;
     const videoArr = await getVideoData(videoId);
@@ -37,9 +30,17 @@ export async function getStaticPaths() {
 
 const Video = ({video}) => {
     const router = useRouter();
-    const { title, publishTime, description, channelTitle, viewCount } = video;
+    const {
+        title,
+        publishTime,
+        description,
+        channelTitle,
+        statistics: { viewCount } = { viewCount: 0 },
+      } = video;
+      
     return (
         <div className={styles.container}>
+            <NavBar/>
             <Modal
                 isOpen={true}
                 onRequestClose={() => router.back()}

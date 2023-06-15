@@ -98,3 +98,5 @@
 23. youtube api by ID
 24. fix link component route
 25. ISR query param
+26. navbar component
+27. youtube quote limit
