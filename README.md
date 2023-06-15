@@ -70,3 +70,33 @@
 21. app route once singIN
 22. routing flicker with login
 23. loading component
+
+## Section-16 :
+
+1. project architecture
+2. what are we buiding and video id page
+3. create dynamic route - video id page
+4. link dynamic page to card component routing
+5. connect link component
+6. link component implement
+7. connect banner component
+8. react model docs
+9. install react model component
+10. model component style
+11. implement youtube api player & doc
+12. youtube player style
+13. modal component structure
+14. modal styling
+15. which data fetching techniques to use
+16. what is ISR
+17. ISR fallback
+18. ISR demo and next steps
+19. ISR docs
+20. Implement ISR
+21. ISR with youtube api docs
+22. Architectural diagram
+23. youtube api by ID
+24. fix link component route
+25. ISR query param
+26. navbar component
+27. youtube quote limit
