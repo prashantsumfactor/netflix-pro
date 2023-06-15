@@ -89,3 +89,12 @@
 14. modal styling
 15. which data fetching techniques to use
 16. what is ISR
+17. ISR fallback
+18. ISR demo and next steps
+19. ISR docs
+20. Implement ISR
+21. ISR with youtube api docs
+22. Architectural diagram
+23. youtube api by ID
+24. fix link component route
+25. ISR query param

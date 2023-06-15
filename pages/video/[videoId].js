@@ -2,22 +2,42 @@ import { useRouter } from "next/router";
 import Modal from "react-modal";
 import styles from '../../styles/Video.module.css'
 import clx from "classnames";
+import { getVideoData } from "@/lib/videos";
 
 Modal.setAppElement('#__next');
 
-const Video = () => {
-    const router = useRouter();
+export async function getStaticProps(context){
+    // const video = {
+    //     title: 'Hi heros',
+    //     publishTime: '1990-05-23',
+    //     description: 'A team of superos to save the world from bad culprit that want to destroy planets.',
+    //     channelTitle: 'Marvel Movies',
+    //     viewCount: 10000,
+    // };
 
-    const video = {
-        title: 'Hi heros',
-        publishTime: '1990-05-23',
-        description: 'A team of superos to save the world from bad culprit that want to destroy planets.',
-        channelTitle: 'Marvel Movies',
-        viewCount: 10000,
+    console.log({context});
+    const videoId = context.params.videoId;
+    const videoArr = await getVideoData(videoId);
+    console.log({videoArr});
+    return{
+        props : {
+            video : videoArr.length > 0 ? videoArr[0] : {} ,
+        },
+        revalidate : 10, // in Seconds
     };
+}
 
+export async function getStaticPaths() {
+    const listOfVideos = ['4HRC6c5-2lQ','EdftT8GMU1U','cAMHx-m9oh8','4HRC6c5-2lQ'];
+    const paths  = listOfVideos.map((videoId) => ({
+        params : {videoId},
+    }));
+    return { paths, fallback : 'blocking'};
+}
+
+const Video = ({video}) => {
+    const router = useRouter();
     const { title, publishTime, description, channelTitle, viewCount } = video;
-
     return (
         <div className={styles.container}>
             <Modal
